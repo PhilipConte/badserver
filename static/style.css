@@ -1,0 +1,218 @@
+:root {
+    --background: #1c2023;
+    --foreground: #c7ccd1;
+
+    --color0: #1c2023;
+    --color1: #c7ae95;
+    --color2: #95c7ae;
+    --color3: #aec795;
+    --color4: #ae95c7;
+    --color5: #c795ae;
+    --color6: #95aec7;
+    --color7: #c7ccd1;
+    --color8: #747c84;
+    --color15: dimgrey;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: #ffffff;
+        --foreground: #404040;
+
+        --color0: #ffffff;
+        --color1: #c41a15;
+        --color2: #007400;
+        --color3: #826b28;
+        --color4: #0000ff;
+        --color5: #a90d91;
+        --color6: #318495;
+        --color7: #404040;
+        --color8: #808080;
+    }
+}
+
+.content {
+    padding: 0.5em;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    margin: 0;
+}
+
+body > nav {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    background-color: var(--color2);
+    color: var(--background);
+    padding: 0em 0.8em
+}
+
+body > nav a {
+    color: var(--background);
+}
+
+body > nav a#brand {
+    font-size: x-large;
+    text-decoration: none;
+}
+
+.content a {
+    color: var(--color6);
+    text-decoration: none;
+}
+
+.content a:visited {
+    color: var(--color5);
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-gap: 2em;
+}
+
+select,
+input,
+textarea,
+button {
+    padding: 0.5em;
+    border: 1px solid var(--color8);
+    color: var(--foreground);
+    background: var(--background);
+    border-width: 1px;
+    border-radius: 0.25em;
+    box-sizing: border-box;
+}
+
+select,
+input:not([type="submit"]),
+textarea {
+    width: 100%;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    white-space: nowrap;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: 2px solid var(--color8);
+    padding: 1em;
+    text-align: left;
+}
+
+td {
+    border-bottom: 1px solid var(--color8);
+    padding: 0.5em;
+}
+
+th::before,
+th::after
+td::before,
+td::after {
+    box-sizing: border-box;
+}
+
+.pagination {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.pagination li {
+    display: inline;
+}
+
+.pagination .active a {
+    background-color: var(--color5);
+    border-color: var(--color5);
+}
+
+.pagination a {
+    color: var(--foreground);
+
+    float: left;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border: 1px solid var(--color8);
+}
+
+.pagination li:hover:not(.active) a {
+    background-color: var(--color8);
+}
+
+.pagination li:first-child a {
+    border-top-left-radius: 0.25em;
+    border-bottom-left-radius: 0.25em;
+}
+
+.pagination li:last-child a {
+    border-top-right-radius: 0.25em;
+    border-bottom-right-radius: 0.25em;
+}
+
+.svg-container {
+    display: flex;
+}
+
+.svg-container > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+}
+
+.ct-chart {
+    height: 50vh;
+    width: 100%;
+}
+
+.ct-chart .ct-label {
+    fill: var(--foreground);
+    color: var(--foreground);
+}
+
+.ct-chart .ct-grid {
+    stroke: var(--foreground);
+}
+
+.ct-chart .ct-series-a .ct-line {
+    stroke: var(--color2);
+}
+
+.ct-chart .ct-series-a .ct-point {
+    display: none;
+}
+
+.ct-chart .ct-series-b .ct-point {
+    stroke: var(--color4);
+}
+
+.ct-chart .ct-series-b .ct-line {
+    display: none
+}
+
+.map {
+    flex: 1 1 0;
+}
+
+.map g path {
+    stroke: var(--color8);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.map > path {
+    fill: var(--color1);
+    fill-opacity: 1;
+    display: none;
+}
