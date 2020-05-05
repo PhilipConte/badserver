@@ -30,7 +30,7 @@ const hoverHandler = e => {
     if (!el) return;
     let num = el.textContent.slice(-1);
 
-    fetch(document.querySelector('.ct-chart').getAttribute("url-path") + num)
+    fetch(document.querySelector('.ct-chart').getAttribute("url-path").slice(0, -1) + num)
         .then(res => res.ok ? res.json() : Promise.reject(res.status))
         .then(data => instantiateChart(data))
         .catch(error => console.error(error));
